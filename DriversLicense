@@ -1,0 +1,64 @@
+package driverslicense;
+
+import javax.swing.JOptionPane;
+
+public class DriversLicense 
+{
+
+    public static void main(String[] args) 
+    {
+        boolean passDLTest = false;
+        boolean passPTest = false;
+        
+        String input = JOptionPane.showInputDialog("How old are you?");
+        double age = Double.parseDouble(input);
+            
+        if (age >= 16)
+        {
+            input = JOptionPane.showInputDialog("Have you passed your drivers \n"
+                  + "test? y or n");
+            //passDLTest = Boolean.parseBoolean(input);
+            if (input.equalsIgnoreCase("y"))
+            {
+                passDLTest = true;
+            }
+            if (passDLTest)
+            {
+                System.out.print("Congrats!");
+            }
+            else
+            {
+                System.out.print("Come back to try the drivers test again.");
+            }      
+        }
+        
+        else if (age >= 15.5)
+        {
+            input = JOptionPane.showInputDialog("Have you passed your permit\n"
+                    + " test? y or n");
+            passPTest = Boolean.parseBoolean(input);
+            
+            if (input.equalsIgnoreCase("y"))
+            {
+             passPTest = true;
+            }
+            
+            if(passPTest == true)
+            {
+                System.out.print("Here's a permit");
+            }
+            else
+            {
+                System.out.print("Come back later to take it again.");
+            }
+              
+        }
+        else
+        {
+            System.out.print("You are too young bro.");
+        }
+        
+        
+    }
+    
+}
